@@ -7,18 +7,13 @@
   <body>
 
     <script type="text/javascript">
-    let type = "WebGL"
-    if(!PIXI.utils.isWebGLSupported()){
-      type = "canvas"
-    }
-
      //Create a Pixi Application
-    let app = new PIXI.Application(800, 600, {backgroundColor: 0x1099bb});
+    var app = new PIXI.Application(800, 600, {backgroundColor: 0x1099bb});
 
     //Add the canvas
     document.body.appendChild(app.view);
       
-     let message = new Text("I have no idea what I'm doing...");
+     var message = new PIXI.Text("I have no idea what I'm doing...");
      message.x = 128;
      message.y = 128;
      app.stage.addChild(message);
