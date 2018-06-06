@@ -13,14 +13,16 @@
     }
 
      //Create a Pixi Application
-    let app = new PIXI.Application({width: 800, height: 600});
+    let app = new PIXI.Application(800, 600, {backgroundColor: 0x1099bb});
 
     //Add the canvas
     document.body.appendChild(app.view);
-      app.renderer.backgroundColor = 0x061639;
+      
      let message = new Text("I have no idea what I'm doing...");
-      app.stage.addChild(message);
-      message.position.set(128,128);
+     message.x = 128;
+     message.y = 128;
+     app.stage.addChild(message);
+
   </script>
   </body>
 </html>
