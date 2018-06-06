@@ -1,6 +1,18 @@
 <html>
-<head/>
-<body>
-<div>I have no idea what I'm doing.<br/>
-</body>
+  <head>
+    <title>P S Y C H I C &nbsp; W A F F L E </title>
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.0/pixi.min.js"></script>
+
+  <body>
+    <div>I have no idea what I'm doing.<br/></div>
+    <script type="text/javascript">
+    let type = "WebGL"
+    if(!PIXI.utils.isWebGLSupported()){
+      type = "canvas"
+    }
+
+    PIXI.utils.sayHello(type)
+  </script>
+  </body>
 </html>
