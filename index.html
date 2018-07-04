@@ -13,6 +13,26 @@
     //Add the canvas
     document.body.appendChild(app.view);
       
+      
+      var squareFar = new PIXI.Sprite(PIXI.Texture.WHITE);
+squareFar.tint = 0xff0000;
+squareFar.factor = 1;
+squareFar.anchor.set(0.5);
+squareFar.position.set(app.screen.width / 2, 50);
+
+// create a new Sprite from an image path
+var container = new PIXI.projection.Container2d();
+container.position.set(app.screen.width / 2, app.screen.height);
+
+var surface = new PIXI.projection.Sprite2d(new PIXI.Texture.fromImage("stonetiles_003_diff.jpg"));
+surface.anchor.set(0.5, 1.0);
+//surface.scale.y = -1; //sorry, have to do that to make a correct projection
+surface.width = app.screen.width;
+surface.height = app.screen.height;
+      
+      app.stage.addChild(container);
+container.addChild(surface);
+      
      var message = new PIXI.Text("I have no idea what I'm doing...");
      message.x = 128;
      message.y = 128;
