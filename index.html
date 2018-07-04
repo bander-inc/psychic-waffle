@@ -44,6 +44,11 @@ squares.forEach(function(s) { app.stage.addChild(s); });
      message.y = 128;
      app.stage.addChild(message);
 
+      // Listen for animate update
+app.ticker.add(function (delta) {
+    containerSprite.proj.mapBilinearSprite(containerSprite, quad);
+});
+      
   </script>
   </body>
 </html>
