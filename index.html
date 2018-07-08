@@ -8,7 +8,7 @@
 
     <script type="text/javascript">
      //Create a Pixi Application
-    var app = new PIXI.Application(800, 600, {backgroundColor: 0x1099bb});
+    var app = new PIXI.Application(512, 280, {backgroundColor: 0x1099bb});
 
     //Add the canvas
     document.body.appendChild(app.view);
@@ -24,12 +24,27 @@
 }
 
 var squares = [
-    createSquare(0, 0),
+    createSquare(16, 16),
     createSquare(64, 64),
     createSquare(64, 128),
-    createSquare(0, 192)
+    createSquare(16, 192)
 ];
 
+     // start ceiling and floor
+      
+   var graphics = new PIXI.Graphics();
+  // set a fill and line style
+  graphics.beginFill(0x595858, 1);
+  graphics.lineStyle(0, 0, 0, 0);
+  // ceiling
+  graphics.drawRect(16,16,320,64);
+  graphics.endFill();
+   // floor
+  graphics.beginFill(0xbcbcbc, 1);
+  graphics.drawRect(16, 144, 320, 64);
+      
+      app.stage.addChild(graphics);
+      
 var quad = squares.map(function(s) { return s.position });
 
 //add sprite itself
@@ -39,10 +54,10 @@ containerSprite.anchor.set(0.5);
 app.stage.addChild(containerSprite);
 squares.forEach(function(s) { app.stage.addChild(s); });
 
-     var message = new PIXI.Text("I have no idea what I'm doing...");
-     message.x = 128;
-     message.y = 128;
-     app.stage.addChild(message);
+     //var message = new PIXI.Text("I have no idea what I'm doing...");
+     //message.x = 128;
+     //message.y = 128;
+     //app.stage.addChild(message);
 
       // Listen for animate update
 app.ticker.add(function (delta) {
